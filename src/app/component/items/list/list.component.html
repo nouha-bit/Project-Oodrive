@@ -1,0 +1,38 @@
+<div class="container">
+    <header>
+        <h1>Liste des fichiers</h1>
+        <div class="row">
+            <input type="button" value="Ajouter un fichier" class="btn btn-primary" [routerLink]="['/items', 'add']">
+          
+
+        </div>
+    </header>
+    <main>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Date Creation</th>
+                    <th scope="col">Derniere modification</th>
+                    <th scope="col">Modifier</th>
+                    <th scope="col">Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items; let indice = index">
+                    <th scope="row">{{indice + 1}}</th>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.creation}}</td>
+                    <td>{{item.modification}}</td>
+                   
+                    <td><i class="fa fa-edit" [routerLink]="['/items', 'edit', item.id]"></i></td>
+                    <td><i class="fa fa-trash" (click)="itemservice.deleteItem(item.id)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+</div>

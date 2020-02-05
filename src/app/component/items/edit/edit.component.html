@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Editer un Fichier</h1>
+    <form (ngSubmit)="editItem(f)" #f=ngForm *ngFor="let i of it">
+        <div class="form-group" >
+            <label for="id">ID</label>
+            <input type="text" class="form-control"  [(ngModel)]="i.id" name="id" ngModel readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">Nom Fichier</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="i.name" name="name" ngModel >
+        </div>
+        <div class="form-group">
+            <label for="creation">Date creation</label>
+            <input type="text" class="form-control"  [(ngModel)]="i.creation" name="creation" ngModel readonly>
+        </div>
+        <div class="form-group">
+            <label for="modification">Date modification</label>
+            <input type="text" class="form-control"  [(ngModel)]="i.modification" name="modification" ngModel readonly>
+        </div>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+</div>

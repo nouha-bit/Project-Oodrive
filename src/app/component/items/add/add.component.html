@@ -1,0 +1,15 @@
+<div class="container col-6">
+    <h1>Ajouter Fichier</h1>
+    <form (ngSubmit)="addItem(f)" #f=ngForm>
+        <div class="form-group">
+            <label for="titre">Nom Fichier</label>
+            <input type="text" class="form-control"  id="name" name="name" ngModel>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" value="option3">Folder</label>
+            <input type="checkbox" [(ngModel)]="theCheckbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+            
+          </div>       
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+</div>
